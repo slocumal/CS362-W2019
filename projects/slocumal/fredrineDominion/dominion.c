@@ -675,7 +675,7 @@ int smithyCard(struct gameState *state, int currentPlayer, int handPos) {
 
 	int i;
 	//+3 Cards
-	for (i = 0; i <= 3; i++) { // bug has been introduced changing < to <=
+	for (i = 0; i < 3; i++) { 
 		drawCard(currentPlayer, state);
 	} 
 			
@@ -690,7 +690,7 @@ int villageCard(struct gameState *state, int currentPlayer, int handPos) {
 	drawCard(currentPlayer, state);
 		
 	//+2 Actions
-	state->numActions = state->numActions - 1; // bug has been introduced to subtract one action instead of add two
+	state->numActions = state->numActions + 2; 
 		
 	//discard played card from hand
 	discardCard(handPos, currentPlayer, state, 0);
